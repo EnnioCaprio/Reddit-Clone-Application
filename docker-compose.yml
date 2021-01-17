@@ -1,0 +1,44 @@
+version: '3'
+services: 
+  nginx:
+    links: 
+      - react-front
+      - express-server-reddit
+    depends_on:
+        - react-front
+        - express-server-reddit
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports: 
+      - '80:80'
+  react-front:
+    image: react-front
+    stdin_open: true
+    #ports: 
+    #  - '3000:3000'
+    restart: on-failure
+  express-server-reddit: 
+    image: express-server-reddit
+    #ports: 
+    #  - '4000:4000'
+    depends_on:
+      - db
+    restart: on-failure
+  db:
+    image: postgres
+    environment: 
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: Application
+      DATABASE_URL: postgres://postgres:postgres@mydatabase.cpoulmbbh13z.eu-central-1.rds.amazonaws.com:5432/Application
+      TZ: 'Europe/Rome'
+      PGTZ: 'Europe/Rome'
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+volumes:
+  pgdata:
+    driver: local
