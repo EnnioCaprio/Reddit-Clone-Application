@@ -15,7 +15,19 @@ This app includes almost all the basics actions of Reddit such as read, write, d
 
 <b>Things to add or to fix<b/><br/>
   <ul>
-    <li>Pagination for user profile</li>
+    <li>Pagination for user profile, so API doesn't need to load all the extra informations</li>
     <li>The tree structure for comments</li>
+    <li>Improve ui error handling</li>
     <li>Improve the voting system, sometimes there are delays among API calls so the user has to refresh to see the selected vote</li>
   </ul>
+  
+ 
+ <h1>Suggestions</h1>
+ <p>For login you can create your own account or you can login with root account</p>
+ 
+ <h3>Root credentials</h3>
+ <ul>
+  <li>Email: root@gmail.com</li>
+  <li>Password: 12345678</li>
+ </ul>
+ 
