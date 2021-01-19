@@ -13,6 +13,9 @@ For the login-system, I didn't use JWT tokens instead I used cookie with set-att
 This app includes almost all the basics actions of Reddit such as read, write, delete and update comments inside threads, create new threads, join different subject groups, vote system, friends system and create/chat with other users.<br/>
 
 
+Deployment: Git, GitHub, Docker for containerization and AWS (EC2, RDS, ECR, ECS, ELB and route53)
+
+
 <b>Things to add or to fix<b/><br/>
   <ul>
     <li>Pagination for user profile, so API doesn't need to load all the extra informations</li>
